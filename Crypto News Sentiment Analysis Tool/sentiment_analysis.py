@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 import requests
 from bs4 import BeautifulSoup
 from wordcloud import WordCloud
+import streamlit as st
 
 def load_model():
     """Load the FinBERT tokenizer and model."""
@@ -46,8 +47,8 @@ def plot_sentiment_distribution(sentiments):
 def fetch_crypto_headlines_multi_api(limit=30):
     """Fetch latest cryptocurrency news headlines from GNews and NewsData APIs."""
     headlines = []
-    api_key_newsdata = "pub_83099113148276ada59fd35cd74818b2084f8"
-    api_key_gnews = "5f51404f3e0f19edd081e05d235241ee"
+    api_key_gnews = st.secrets["api_key_gnews"]
+    api_key_newsdata = st.secrets["api_key_newsdata"]
 
     # Try GNews first
     try:
