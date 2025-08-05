@@ -1,0 +1,8 @@
+streamlit
+pandas
+matplotlib
+transformers
+torch
+beautifulsoup4
+requests
+wordcloud
